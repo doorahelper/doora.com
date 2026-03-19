@@ -140,14 +140,15 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .door-cards { background: #fff; padding: 12px 20px 16px; }
 .door-cards-inner { max-width: 480px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .door-card {
-  background: #fff; border: 1px solid #E5E7EB; border-radius: 8px; padding: 20px 14px; text-align: center;
+  background: #fff; border: 1px solid #E0E7F1; border-radius: 12px; padding: 24px 16px; text-align: center;
   display: flex; flex-direction: column; align-items: center;
+  box-shadow: 0 1px 4px rgba(59,130,246,0.04);
 }
-.door-card-icon { width: 36px; height: 36px; margin-bottom: 10px; }
-.door-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.02em; line-height: 1.2; }
-.door-card .door-desc { font-size: 12px; color: #6B7280; margin-bottom: 2px; }
-.door-card .door-meta { font-size: 11px; color: #9CA3AF; margin-bottom: 14px; flex: 1; }
-.door-card .btn { display: block; width: 100%; padding: 9px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #fff; text-align: center; }
+.door-card-icon { width: 36px; height: 36px; margin-bottom: 14px; }
+.door-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.02em; line-height: 1.25; }
+.door-card .door-desc { font-size: 13px; color: #6B7280; margin-bottom: 6px; }
+.door-card .door-meta { font-size: 12px; color: #9CA3AF; margin-bottom: 18px; flex: 1; }
+.door-card .btn { display: block; width: 80%; padding: 11px; border-radius: 8px; font-size: 14px; font-weight: 600; color: #fff; text-align: center; }
 .btn-blue { background: #007AFF; }
 .btn-gradient { background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF); }
 @media (min-width: 768px) {
@@ -248,7 +249,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   z-index: 1;
 }
 .trust-band-inner { max-width: 960px; margin: 0 auto; }
-.trust-band-heading h2 { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.9); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 20px; text-align: center; }
+.trust-band-heading h2 { font-size: 26px; font-weight: 700; color: rgba(255,255,255,0.9); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 20px; text-align: center; }
 /* Mobile: card is centered, subtitle inside card area */
 .data-card {
   max-width: 360px; margin: 0 auto;
