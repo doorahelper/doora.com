@@ -30,7 +30,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .nav-left { display: flex; align-items: center; gap: 12px; }
 .hamburger { display: flex; flex-direction: column; gap: 4px; background: none; padding: 4px; }
 .hamburger span { display: block; width: 18px; height: 2px; background: #fff; border-radius: 1px; }
-.nav-logo-text { color: #fff; font-weight: 700; font-size: 18px; letter-spacing: 0.1em; }
+.nav-logo-text { font-weight: 700; font-size: 18px; letter-spacing: 0.1em; background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .nav-logo-img { display: none; height: 22px; }
 .nav-signin { color: #fff; font-weight: 500; font-size: 14px; }
 @media (min-width: 768px) {
@@ -174,13 +174,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .doora-mockup { display: flex; justify-content: center; position: relative; margin-bottom: 24px; }
 .doora-card-text { text-align: center; }
 .doora-mockup-ghost {
-  position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
-  width: 280px; height: 260px; border-radius: 12px; opacity: 0.15;
+  position: absolute; top: 8px; left: 50%; transform: translateX(-48%) rotate(3deg);
+  width: 92%; max-width: 340px; height: 90%; border-radius: 12px; opacity: 0.15;
   background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF);
 }
 .doora-mockup-card {
-  position: relative; width: 290px; border-radius: 12px; padding: 24px 20px;
-  background: #fff;
+  position: relative; width: 92%; max-width: 340px; border-radius: 12px; padding: 24px 20px;
+  background: #fff; transform: rotate(2deg);
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   border: 2px solid transparent;
   background-clip: padding-box;
@@ -216,7 +216,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 /* ========== ACCORDION (Things Nobody Tells Renters) ========== */
 .accordion-section { background: #F8F6FB; padding: 48px 20px; }
 .accordion-inner { max-width: 640px; margin: 0 auto; }
-.accordion-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9CA3AF; font-weight: 600; margin-bottom: 20px; }
+.accordion-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 20px; background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .accordion-item {
   background: #fff; border-bottom: 1px solid #F3F4F6;
   display: flex; align-items: flex-start; gap: 16px; padding: 20px 16px;
@@ -324,7 +324,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
         </div>
       </div>
 
-      <div class="hero-value-props">Free · Human rental support · Your data, your control</div>
     </div>
 
     <div class="hero-right">
@@ -353,6 +352,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
         </div>
       </div>
     </div>
+    <div class="hero-value-props">Free · Human rental support · Your data, your control</div>
   </div>
 </section>
 
