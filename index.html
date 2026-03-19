@@ -43,7 +43,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 /* ========== HERO ========== */
 .hero {
   background: linear-gradient(160deg, #3D1A2F 0%, #1E1440 50%, #0B2242 100%);
-  padding: 72px 20px 24px;
+  padding: 64px 20px 20px;
   position: relative; overflow: hidden;
 }
 .hero-inner { max-width: 1120px; margin: 0 auto; }
@@ -90,9 +90,10 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .chat-bubble { padding: 10px 14px; border-radius: 14px; font-size: 14px; line-height: 1.45; max-width: 85%; margin-bottom: 8px; }
 .chat-bubble.helper { background: #F3F4F6; color: #1A1A2E; }
 .chat-bubble.user { background: #007AFF; color: #fff; margin-left: auto; }
-.chat-messages-area { height: 68px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
-.chat-delivered { font-size: 11px; color: #9CA3AF; text-align: right; margin-bottom: 4px; }
-.typing-dots { display: flex; gap: 4px; padding: 10px 14px; }
+.chat-messages-area { height: 64px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+.chat-bubble.user { transition: opacity 0.3s; }
+.chat-delivered { font-size: 11px; color: #9CA3AF; text-align: right; margin-bottom: 2px; transition: opacity 0.3s; }
+.typing-dots { display: flex; gap: 4px; padding: 6px 0; }
 .typing-dots span { width: 6px; height: 6px; background: #9CA3AF; border-radius: 50%; animation: dotPulse 1.4s infinite; }
 .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
 .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
@@ -153,25 +154,25 @@ button { font-family: inherit; cursor: pointer; border: none; }
 /* ========== DOORA CARD SECTION ========== */
 .doora-card-section { background: #FAF3F6; padding: 48px 20px; }
 .doora-card-inner { max-width: 960px; margin: 0 auto; }
-.doora-card-text h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px; color: #1A1A2E; }
-.doora-card-text p { font-size: 15px; color: #6B7280; margin-bottom: 4px; }
+.doora-card-heading { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 20px; color: #1A1A2E; }
+.doora-card-text p { font-size: 15px; color: #6B7280; margin-bottom: 4px; text-align: center; }
 .doora-card-text .btn-get {
   display: block; margin-top: 16px; padding: 14px 28px; border-radius: 6px;
   background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF);
   color: #fff; font-weight: 600; font-size: 15px; text-align: center;
 }
-/* Mobile: card first, then text below */
+/* Mobile: heading, card, text, button */
 .doora-card-inner { display: flex; flex-direction: column; }
-.doora-mockup { order: 1; display: flex; justify-content: center; position: relative; margin-bottom: 28px; }
-.doora-card-text { order: 2; text-align: center; }
+.doora-mockup { display: flex; justify-content: center; position: relative; margin-bottom: 24px; }
+.doora-card-text { text-align: center; }
 .doora-mockup-ghost {
-  position: absolute; top: 8px; left: 50%; transform: translateX(-50%) rotate(2deg);
+  position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
   width: 280px; height: 260px; border-radius: 12px; opacity: 0.15;
   background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF);
 }
 .doora-mockup-card {
   position: relative; width: 290px; border-radius: 12px; padding: 24px 20px;
-  background: #fff; transform: rotate(2deg);
+  background: #fff;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   border: 2px solid transparent;
   background-clip: padding-box;
@@ -195,10 +196,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .dc-revoke { font-size: 13px; color: #007AFF; text-decoration: underline; margin-top: 4px; display: inline-block; float: right; }
 @media (min-width: 768px) {
   .doora-card-inner { flex-direction: row; align-items: center; gap: 48px; }
-  .doora-card-text { flex: 1; order: 1; text-align: left; }
-  .doora-card-text h2 { font-size: 34px; }
+  .doora-card-heading-wrap { flex: 1; order: 1; }
+  .doora-card-heading { font-size: 34px; }
+  .doora-card-text p { text-align: left; }
   .doora-card-text .btn-get { display: inline-block; max-width: 240px; }
   .doora-mockup { flex: 1; order: 2; margin-bottom: 0; justify-content: flex-end; }
+  .doora-mockup-card { transform: rotate(2deg); }
+  .doora-mockup-ghost { transform: translateX(-50%) rotate(2deg); }
 }
 
 /* ========== ACCORDION (Things Nobody Tells Renters) ========== */
@@ -324,7 +328,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
             <div class="chat-bubble user" id="userBubble">I keep getting rejected and I don't know what I'm doing wrong.</div>
           </div>
           <div class="chat-delivered">Delivered</div>
-          <div class="typing-dots" id="typingDots" style="display:none;">
+          <div class="typing-dots">
             <span></span><span></span><span></span>
           </div>
           <div class="chat-input-bar">
@@ -368,11 +372,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <!-- DOORA CARD SECTION -->
 <section class="doora-card-section">
   <div class="doora-card-inner">
-    <div class="doora-card-text">
-      <h2>You shouldn't have to prove yourself 20&nbsp;times.</h2>
-      <p>One application. Every agency.</p>
-      <p>You see who's viewed it.</p>
-      <a href="#" class="btn-get">Get your Doora Card</a>
+    <div class="doora-card-heading-wrap">
+      <h2 class="doora-card-heading">You shouldn't have to prove yourself 20&nbsp;times.</h2>
+      <div class="doora-card-text">
+        <p>One application. Every agency.</p>
+        <p>You see who's viewed it.</p>
+        <a href="#" class="btn-get">Get your Doora Card</a>
+      </div>
     </div>
     <div class="doora-mockup">
       <div class="doora-mockup-ghost"></div>
@@ -388,7 +394,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
         <a href="#" class="dc-revoke">Revoke access</a>
       </div>
     </div>
-  </div>
+  </div><!-- /doora-card-inner -->
 </section>
 
 <!-- Transition -->
@@ -411,7 +417,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
     </div>
 
     <div class="accordion-item" data-index="1">
-      <div class="accordion-accent" style="background:#F0A9D8"></div>
+      <div class="accordion-accent" style="background:linear-gradient(to bottom,#F0A9D8,#BB9AE4,#53BCFF)"></div>
       <span class="accordion-num">02</span>
       <span class="accordion-title">Your application gets 30 seconds.</span>
       <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -422,7 +428,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
     </div>
 
     <div class="accordion-item" data-index="2">
-      <div class="accordion-accent" style="background:#BB9AE4"></div>
+      <div class="accordion-accent" style="background:linear-gradient(to bottom,#F0A9D8,#BB9AE4,#53BCFF)"></div>
       <span class="accordion-num">03</span>
       <span class="accordion-title">The condition report matters more than your lease.</span>
       <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -433,7 +439,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
     </div>
 
     <div class="accordion-item" data-index="3">
-      <div class="accordion-accent" style="background:#53BCFF"></div>
+      <div class="accordion-accent" style="background:linear-gradient(to bottom,#F0A9D8,#BB9AE4,#53BCFF)"></div>
       <span class="accordion-num">04</span>
       <span class="accordion-title">You can break a lease without penalty.</span>
       <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -444,7 +450,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
     </div>
 
     <div class="accordion-item" data-index="4">
-      <div class="accordion-accent" style="background:#007AFF"></div>
+      <div class="accordion-accent" style="background:linear-gradient(to bottom,#F0A9D8,#BB9AE4,#53BCFF)"></div>
       <span class="accordion-num">05</span>
       <span class="accordion-title">Your rental data is worth more than you think.</span>
       <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -518,29 +524,15 @@ button { font-family: inherit; cursor: pointer; border: none; }
   ];
   var idx = 0;
   var bubble = document.getElementById('userBubble');
-  var dots = document.getElementById('typingDots');
-  var delivered = document.querySelector('.chat-delivered');
 
   setInterval(function() {
     idx = (idx + 1) % messages.length;
-    // Fade out bubble
-    bubble.style.transition = 'opacity 0.3s';
+    // Fade out, swap text, fade in — no layout shift
     bubble.style.opacity = '0';
-    delivered.style.opacity = '0';
     setTimeout(function() {
-      // Show typing dots, hide bubble
-      bubble.style.visibility = 'hidden';
-      bubble.style.opacity = '0';
-      dots.style.display = 'flex';
-    }, 300);
-    setTimeout(function() {
-      // Show new message
-      dots.style.display = 'none';
       bubble.textContent = messages[idx];
-      bubble.style.visibility = 'visible';
       bubble.style.opacity = '1';
-      delivered.style.opacity = '1';
-    }, 1500);
+    }, 600);
   }, 5000);
 })();
 
