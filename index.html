@@ -90,14 +90,21 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .chat-bubble { padding: 10px 14px; border-radius: 14px; font-size: 14px; line-height: 1.45; max-width: 85%; margin-bottom: 8px; }
 .chat-bubble.helper { background: #F3F4F6; color: #1A1A2E; }
 .chat-bubble.user { background: #007AFF; color: #fff; margin-left: auto; }
-.chat-messages-area { height: 64px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+.chat-messages-area { height: 90px; display: flex; flex-direction: column; justify-content: flex-end; }
 .chat-bubble.user { transition: opacity 0.3s; }
+.chat-bubble.user-typing {
+  background: #007AFF; margin-left: auto; padding: 12px 18px;
+  display: none; border-radius: 14px; margin-bottom: 8px;
+}
+.chat-bubble.user-typing span { width: 7px; height: 7px; background: rgba(255,255,255,0.7); border-radius: 50%; display: inline-block; animation: dotBounce 1.4s ease-in-out infinite; }
+.chat-bubble.user-typing span:nth-child(2) { animation-delay: 0.2s; }
+.chat-bubble.user-typing span:nth-child(3) { animation-delay: 0.4s; }
 .chat-delivered { font-size: 11px; color: #9CA3AF; text-align: right; margin-bottom: 2px; transition: opacity 0.3s; }
-.typing-dots { display: flex; gap: 4px; padding: 6px 0; }
-.typing-dots span { width: 6px; height: 6px; background: #9CA3AF; border-radius: 50%; animation: dotPulse 1.4s infinite; }
+.typing-dots { display: flex; gap: 5px; padding: 6px 0; align-items: center; }
+.typing-dots span { width: 7px; height: 7px; background: #6B7280; border-radius: 50%; animation: dotBounce 1.4s ease-in-out infinite; }
 .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
 .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-@keyframes dotPulse { 0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); } 40% { opacity: 1; transform: scale(1); } }
+@keyframes dotBounce { 0%, 60%, 100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-4px); opacity: 1; } }
 .chat-input-bar { display: flex; align-items: center; gap: 8px; margin-top: 8px; padding: 8px 12px; border: 1px solid #E5E7EB; border-radius: 20px; }
 .chat-input-bar span { flex: 1; font-size: 13px; color: #9CA3AF; }
 .chat-send { width: 28px; height: 28px; border-radius: 50%; background: #007AFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -155,12 +162,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .doora-card-section { background: #FAF3F6; padding: 48px 20px; }
 .doora-card-inner { max-width: 960px; margin: 0 auto; }
 .doora-card-heading { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 20px; color: #1A1A2E; }
-.doora-card-text p { font-size: 15px; color: #6B7280; margin-bottom: 4px; text-align: center; }
+.doora-card-text p { font-size: 15px; color: #6B7280; margin-bottom: 4px; text-align: center; line-height: 1.5; }
 .doora-card-text .btn-get {
-  display: block; margin-top: 16px; padding: 14px 28px; border-radius: 6px;
+  display: block; margin-top: 20px; padding: 16px 28px; border-radius: 6px;
   background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF);
   color: #fff; font-weight: 600; font-size: 15px; text-align: center;
 }
+.doora-card-text { margin-top: 8px; }
 /* Mobile: heading, card, text, button */
 .doora-card-inner { display: flex; flex-direction: column; }
 .doora-mockup { display: flex; justify-content: center; position: relative; margin-bottom: 24px; }
@@ -232,6 +240,10 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .trust-band {
   background: linear-gradient(160deg, #3D1A2F 0%, #1E1440 50%, #0B2242 100%);
   padding: 48px 20px;
+  border-radius: 20px 20px 0 0;
+  margin-top: -20px;
+  position: relative;
+  z-index: 1;
 }
 .trust-band-inner { max-width: 960px; margin: 0 auto; }
 .trust-band-heading h2 { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.9); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 20px; text-align: center; }
@@ -325,6 +337,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
         <div class="chat-card">
           <div class="chat-bubble helper">Hi! Let's map your journey.</div>
           <div class="chat-messages-area" id="chatArea">
+            <div class="chat-bubble user-typing" id="userTyping"><span></span><span></span><span></span></div>
             <div class="chat-bubble user" id="userBubble">I keep getting rejected and I don't know what I'm doing wrong.</div>
           </div>
           <div class="chat-delivered">Delivered</div>
@@ -524,15 +537,24 @@ button { font-family: inherit; cursor: pointer; border: none; }
   ];
   var idx = 0;
   var bubble = document.getElementById('userBubble');
+  var typing = document.getElementById('userTyping');
 
   setInterval(function() {
     idx = (idx + 1) % messages.length;
-    // Fade out, swap text, fade in — no layout shift
+    // 1. Fade out message
     bubble.style.opacity = '0';
     setTimeout(function() {
+      // 2. Hide message, show blue typing dots
+      bubble.style.display = 'none';
+      typing.style.display = 'block';
+    }, 300);
+    setTimeout(function() {
+      // 3. Hide typing, show new message
+      typing.style.display = 'none';
       bubble.textContent = messages[idx];
+      bubble.style.display = '';
       bubble.style.opacity = '1';
-    }, 600);
+    }, 1800);
   }, 5000);
 })();
 
