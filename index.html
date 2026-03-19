@@ -43,11 +43,11 @@ button { font-family: inherit; cursor: pointer; border: none; }
 /* ========== HERO ========== */
 .hero {
   background: linear-gradient(160deg, #3D1A2F 0%, #1E1440 50%, #0B2242 100%);
-  padding: 64px 20px 20px;
+  padding: 60px 20px 12px;
   position: relative; overflow: hidden;
 }
 .hero-inner { max-width: 1120px; margin: 0 auto; }
-.hero-headline { color: #fff; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 8px; }
+.hero-headline { color: #fff; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 4px; }
 .hero-headline .wavy {
   position: relative; display: inline;
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5C8.33 1 16.67 1 25 5C33.33 9 41.67 9 50 5C58.33 1 66.67 1 75 5C83.33 9 91.67 9 100 5' stroke='%237AB4E0' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -58,10 +58,10 @@ button { font-family: inherit; cursor: pointer; border: none; }
   animation: drawUnderline 1s ease-out 0.3s forwards;
 }
 @keyframes drawUnderline { to { background-size: 100% 8px; } }
-.hero-free { color: rgba(255,255,255,0.6); font-size: 16px; font-weight: 500; margin-bottom: 16px; }
+.hero-free { color: rgba(255,255,255,0.6); font-size: 16px; font-weight: 500; margin-bottom: 8px; }
 
 /* Trust ticker */
-.trust-ticker { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; overflow: hidden; max-width: 100%; }
+.trust-ticker { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; overflow: hidden; max-width: 100%; }
 .trust-label { color: rgba(255,255,255,0.35); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
 .trust-divider { width: 1px; height: 16px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
 .trust-scroll { overflow: hidden; flex: 1; mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
@@ -70,13 +70,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
 @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* Chat preview */
-.chat-section { margin-top: 8px; }
-.chat-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.chat-section { margin-top: 4px; }
+.chat-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
 .chat-avatar { width: 32px; height: 32px; border-radius: 50%; background: #D1D5DB; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 600; font-size: 14px; position: relative; flex-shrink: 0; }
 .chat-avatar::after { content: ''; position: absolute; bottom: 0; right: 0; width: 8px; height: 8px; background: #22C55E; border-radius: 50%; border: 2px solid #1E1440; }
 .chat-name { color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; }
 .chat-card {
-  background: #fff; border-radius: 16px; padding: 16px; position: relative;
+  background: #fff; border-radius: 16px; padding: 14px; position: relative;
   border: 1px solid transparent;
   background-clip: padding-box;
 }
@@ -87,10 +87,10 @@ button { font-family: inherit; cursor: pointer; border: none; }
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor; mask-composite: exclude;
 }
-.chat-bubble { padding: 10px 14px; border-radius: 14px; font-size: 14px; line-height: 1.45; max-width: 85%; margin-bottom: 8px; }
+.chat-bubble { padding: 8px 12px; border-radius: 14px; font-size: 13px; line-height: 1.4; max-width: 85%; margin-bottom: 6px; }
 .chat-bubble.helper { background: #F3F4F6; color: #1A1A2E; }
 .chat-bubble.user { background: #007AFF; color: #fff; margin-left: auto; }
-.chat-messages-area { height: 90px; display: flex; flex-direction: column; justify-content: flex-end; }
+.chat-messages-area { height: 70px; display: flex; flex-direction: column; justify-content: flex-end; }
 .chat-bubble.user { transition: opacity 0.3s; }
 .chat-bubble.user-typing {
   background: #007AFF; margin-left: auto; padding: 12px 18px;
@@ -105,11 +105,11 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
 .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
 @keyframes dotBounce { 0%, 60%, 100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-4px); opacity: 1; } }
-.chat-input-bar { display: flex; align-items: center; gap: 8px; margin-top: 8px; padding: 8px 12px; border: 1px solid #E5E7EB; border-radius: 20px; }
+.chat-input-bar { display: flex; align-items: center; gap: 8px; margin-top: 6px; padding: 7px 12px; border: 1px solid #E5E7EB; border-radius: 20px; }
 .chat-input-bar span { flex: 1; font-size: 13px; color: #9CA3AF; }
 .chat-send { width: 28px; height: 28px; border-radius: 50%; background: #007AFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .chat-send svg { width: 14px; height: 14px; }
-.hero-value-props { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 20px; text-align: center; }
+.hero-value-props { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 10px; text-align: center; }
 
 @media (min-width: 768px) {
   .hero { padding: 100px 40px 64px; }
@@ -124,18 +124,18 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 
 /* ========== ZONE TRANSITIONS ========== */
-.zone-fade-dark-white { height: 32px; background: linear-gradient(to bottom, #0B2242, #FFFFFF); }
-.zone-fade-white-warm { height: 32px; background: linear-gradient(to bottom, #FFFFFF, #FAF3F6); }
-.zone-fade-warm-lavender { height: 32px; background: linear-gradient(to bottom, #FAF3F6, #F8F6FB); }
-.zone-fade-lavender-dark { height: 32px; background: linear-gradient(to bottom, #F8F6FB, #0B2242); }
-.zone-fade-dark-light { height: 32px; background: linear-gradient(to bottom, #0B2242, #F8F9FB); }
+.zone-fade-dark-white { height: 20px; background: linear-gradient(to bottom, #0B2242, #FFFFFF); }
+.zone-fade-white-warm { height: 20px; background: linear-gradient(to bottom, #FFFFFF, #FAF3F6); }
+.zone-fade-warm-lavender { height: 20px; background: linear-gradient(to bottom, #FAF3F6, #F8F6FB); }
+.zone-fade-lavender-dark { height: 20px; background: linear-gradient(to bottom, #F8F6FB, #0B2242); }
+.zone-fade-dark-light { height: 20px; background: linear-gradient(to bottom, #0B2242, #F8F9FB); }
 @media (min-width: 768px) {
   .zone-fade-dark-white, .zone-fade-white-warm, .zone-fade-warm-lavender,
   .zone-fade-lavender-dark, .zone-fade-dark-light { height: 48px; }
 }
 
 /* ========== DOOR CARDS ========== */
-.door-cards { background: #fff; padding: 16px 20px 24px; }
+.door-cards { background: #fff; padding: 12px 20px 16px; }
 .door-cards-inner { max-width: 480px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .door-card {
   background: #fff; border: 1px solid #E5E7EB; border-radius: 8px; padding: 20px 14px; text-align: center;
@@ -159,7 +159,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 
 /* ========== DOORA CARD SECTION ========== */
-.doora-card-section { background: #FAF3F6; padding: 48px 20px; }
+.doora-card-section { background: #FAF3F6; padding: 32px 20px; }
 .doora-card-inner { max-width: 960px; margin: 0 auto; }
 .doora-card-heading { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 20px; color: #1A1A2E; }
 .doora-card-text p { font-size: 15px; color: #6B7280; margin-bottom: 4px; text-align: center; line-height: 1.5; }
@@ -203,12 +203,12 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .dc-dot.blue { background: #007AFF; }
 .dc-revoke { font-size: 13px; color: #007AFF; text-decoration: underline; margin-top: 4px; display: inline-block; float: right; }
 @media (min-width: 768px) {
-  .doora-card-inner { flex-direction: row; align-items: center; gap: 48px; }
-  .doora-card-heading-wrap { flex: 1; order: 1; }
-  .doora-card-heading { font-size: 34px; }
+  .doora-card-inner { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 12px 48px; align-items: center; }
+  .doora-card-heading { grid-column: 1; grid-row: 1; font-size: 34px; margin-bottom: 0; }
+  .doora-card-text { grid-column: 1; grid-row: 2; text-align: left; margin-top: 0; }
   .doora-card-text p { text-align: left; }
   .doora-card-text .btn-get { display: inline-block; max-width: 240px; }
-  .doora-mockup { flex: 1; order: 2; margin-bottom: 0; justify-content: flex-end; }
+  .doora-mockup { grid-column: 2; grid-row: 1 / 3; margin-bottom: 0; justify-content: flex-end; }
   .doora-mockup-card { transform: rotate(2deg); }
   .doora-mockup-ghost { transform: translateX(-50%) rotate(2deg); }
 }
@@ -385,14 +385,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <!-- DOORA CARD SECTION -->
 <section class="doora-card-section">
   <div class="doora-card-inner">
-    <div class="doora-card-heading-wrap">
-      <h2 class="doora-card-heading">You shouldn't have to prove yourself 20&nbsp;times.</h2>
-      <div class="doora-card-text">
-        <p>One application. Every agency.</p>
-        <p>You see who's viewed it.</p>
-        <a href="#" class="btn-get">Get your Doora Card</a>
-      </div>
-    </div>
+    <h2 class="doora-card-heading">You shouldn't have to prove yourself 20&nbsp;times.</h2>
     <div class="doora-mockup">
       <div class="doora-mockup-ghost"></div>
       <div class="doora-mockup-card">
@@ -406,6 +399,11 @@ button { font-family: inherit; cursor: pointer; border: none; }
         <div class="dc-row"><span class="dc-dot blue"></span> Laing + Simmons Randwick · Sent yesterday</div>
         <a href="#" class="dc-revoke">Revoke access</a>
       </div>
+    </div>
+    <div class="doora-card-text">
+      <p>One application. Every agency.</p>
+      <p>You see who's viewed it.</p>
+      <a href="#" class="btn-get">Get your Doora Card</a>
     </div>
   </div><!-- /doora-card-inner -->
 </section>
