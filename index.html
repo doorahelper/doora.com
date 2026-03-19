@@ -61,7 +61,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .hero-free { color: rgba(255,255,255,0.6); font-size: 16px; font-weight: 500; margin-bottom: 16px; }
 
 /* Trust ticker */
-.trust-ticker { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; overflow: hidden; }
+.trust-ticker { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; overflow: hidden; max-width: 100%; }
 .trust-label { color: rgba(255,255,255,0.35); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
 .trust-divider { width: 1px; height: 16px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
 .trust-scroll { overflow: hidden; flex: 1; mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
@@ -105,12 +105,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
 
 @media (min-width: 768px) {
   .hero { padding: 100px 40px 64px; }
-  .hero-inner { display: flex; align-items: center; gap: 48px; }
-  .hero-left { flex: 1; }
-  .hero-right { flex: 1; max-width: 400px; }
+  .hero-inner { display: flex; align-items: center; gap: 40px; }
+  .hero-left { flex: 1; min-width: 0; }
+  .hero-right { flex: 0 0 340px; max-width: 340px; }
   .hero-headline { font-size: 44px; }
   .hero-free { font-size: 18px; }
   .hero-value-props { text-align: left; }
+  .chat-section { margin-top: 0; }
 }
 
 /* ========== ZONE TRANSITIONS ========== */
@@ -122,23 +123,26 @@ button { font-family: inherit; cursor: pointer; border: none; }
 
 /* ========== DOOR CARDS ========== */
 .door-cards { background: #fff; padding: 24px 20px 32px; }
-.door-cards-inner { max-width: 700px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.door-cards-inner { max-width: 480px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .door-card {
-  background: #fff; border: 1px solid #E5E7EB; border-radius: 8px; padding: 24px 16px; text-align: center;
+  background: #fff; border: 1px solid #E5E7EB; border-radius: 8px; padding: 20px 14px; text-align: center;
   display: flex; flex-direction: column; align-items: center;
 }
-.door-card-icon { width: 40px; height: 40px; margin-bottom: 12px; }
-.door-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.02em; line-height: 1.2; }
-.door-card .door-desc { font-size: 13px; color: #6B7280; margin-bottom: 4px; }
-.door-card .door-meta { font-size: 12px; color: #9CA3AF; margin-bottom: 16px; flex: 1; }
-.door-card .btn { display: block; width: 100%; padding: 10px; border-radius: 6px; font-size: 14px; font-weight: 600; color: #fff; text-align: center; }
+.door-card-icon { width: 36px; height: 36px; margin-bottom: 10px; }
+.door-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.02em; line-height: 1.2; }
+.door-card .door-desc { font-size: 12px; color: #6B7280; margin-bottom: 2px; }
+.door-card .door-meta { font-size: 11px; color: #9CA3AF; margin-bottom: 14px; flex: 1; }
+.door-card .btn { display: block; width: 100%; padding: 9px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #fff; text-align: center; }
 .btn-blue { background: #007AFF; }
 .btn-gradient { background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF); }
 @media (min-width: 768px) {
   .door-cards { padding: 32px 40px 40px; }
-  .door-cards-inner { gap: 20px; }
-  .door-card { padding: 28px 24px; }
-  .door-card h3 { font-size: 17px; }
+  .door-cards-inner { max-width: 560px; gap: 20px; }
+  .door-card { padding: 24px 20px; }
+  .door-card h3 { font-size: 16px; }
+  .door-card .door-desc { font-size: 13px; }
+  .door-card .door-meta { font-size: 12px; }
+  .door-card .btn { font-size: 14px; padding: 10px; }
 }
 
 /* ========== DOORA CARD SECTION ========== */
