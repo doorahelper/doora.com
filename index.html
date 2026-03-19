@@ -43,7 +43,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 /* ========== HERO ========== */
 .hero {
   background: linear-gradient(160deg, #3D1A2F 0%, #1E1440 50%, #0B2242 100%);
-  padding: 80px 20px 48px;
+  padding: 80px 20px 32px;
   position: relative; overflow: hidden;
 }
 .hero-inner { max-width: 1120px; margin: 0 auto; }
@@ -61,7 +61,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .hero-free { color: rgba(255,255,255,0.6); font-size: 16px; font-weight: 500; margin-bottom: 16px; }
 
 /* Trust ticker */
-.trust-ticker { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; overflow: hidden; }
+.trust-ticker { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; overflow: hidden; }
 .trust-label { color: rgba(255,255,255,0.35); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
 .trust-divider { width: 1px; height: 16px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
 .trust-scroll { overflow: hidden; flex: 1; mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
@@ -79,7 +79,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
   background: #fff; border-radius: 16px; padding: 16px; position: relative;
   border: 1px solid transparent;
   background-clip: padding-box;
-  box-shadow: 0 0 0 1px rgba(0,0,0,0);
 }
 .chat-card::before {
   content: ''; position: absolute; inset: -1px; border-radius: 17px; padding: 1px;
@@ -102,7 +101,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .chat-input-bar span { flex: 1; font-size: 13px; color: #9CA3AF; }
 .chat-send { width: 28px; height: 28px; border-radius: 50%; background: #007AFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .chat-send svg { width: 14px; height: 14px; }
-.hero-value-props { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 24px; text-align: center; }
+.hero-value-props { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 20px; text-align: center; }
 
 @media (min-width: 768px) {
   .hero { padding: 100px 40px 64px; }
@@ -122,41 +121,47 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .zone-fade-dark-light { height: 48px; background: linear-gradient(to bottom, #0B2242, #F8F9FB); }
 
 /* ========== DOOR CARDS ========== */
-.door-cards {
-  background: #fff; padding: 24px 20px 32px;
-}
+.door-cards { background: #fff; padding: 24px 20px 32px; }
 .door-cards-inner { max-width: 700px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .door-card {
   background: #fff; border: 1px solid #E5E7EB; border-radius: 8px; padding: 24px 16px; text-align: center;
   display: flex; flex-direction: column; align-items: center;
 }
 .door-card-icon { width: 40px; height: 40px; margin-bottom: 12px; }
-.door-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.02em; }
+.door-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.02em; line-height: 1.2; }
 .door-card .door-desc { font-size: 13px; color: #6B7280; margin-bottom: 4px; }
-.door-card .door-meta { font-size: 12px; color: #6B7280; margin-bottom: 16px; }
+.door-card .door-meta { font-size: 12px; color: #9CA3AF; margin-bottom: 16px; flex: 1; }
 .door-card .btn { display: block; width: 100%; padding: 10px; border-radius: 6px; font-size: 14px; font-weight: 600; color: #fff; text-align: center; }
 .btn-blue { background: #007AFF; }
 .btn-gradient { background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF); }
 @media (min-width: 768px) {
   .door-cards { padding: 32px 40px 40px; }
   .door-cards-inner { gap: 20px; }
-  .door-card { padding: 24px; }
+  .door-card { padding: 28px 24px; }
+  .door-card h3 { font-size: 17px; }
 }
 
 /* ========== DOORA CARD SECTION ========== */
 .doora-card-section { background: #FAF3F6; padding: 48px 20px; }
 .doora-card-inner { max-width: 960px; margin: 0 auto; }
-.doora-card-text h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 12px; color: #1A1A2E; }
+.doora-card-text h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px; color: #1A1A2E; }
 .doora-card-text p { font-size: 15px; color: #6B7280; margin-bottom: 4px; }
-.doora-card-text .btn-get { display: inline-block; margin-top: 16px; padding: 12px 28px; border-radius: 6px; background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF); color: #fff; font-weight: 600; font-size: 15px; }
-.doora-mockup { margin-top: 32px; display: flex; justify-content: center; position: relative; }
+.doora-card-text .btn-get {
+  display: block; margin-top: 16px; padding: 14px 28px; border-radius: 6px;
+  background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF);
+  color: #fff; font-weight: 600; font-size: 15px; text-align: center;
+}
+/* Mobile: card first, then text below */
+.doora-card-inner { display: flex; flex-direction: column; }
+.doora-mockup { order: 1; display: flex; justify-content: center; position: relative; margin-bottom: 28px; }
+.doora-card-text { order: 2; text-align: center; }
 .doora-mockup-ghost {
   position: absolute; top: 8px; left: 50%; transform: translateX(-50%) rotate(2deg);
   width: 280px; height: 260px; border-radius: 12px; opacity: 0.15;
   background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF);
 }
 .doora-mockup-card {
-  position: relative; width: 280px; border-radius: 12px; padding: 24px 20px;
+  position: relative; width: 290px; border-radius: 12px; padding: 24px 20px;
   background: #fff; transform: rotate(2deg);
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   border: 2px solid transparent;
@@ -170,58 +175,45 @@ button { font-family: inherit; cursor: pointer; border: none; }
   -webkit-mask-composite: xor; mask-composite: exclude; z-index: 0;
 }
 .dc-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6B7280; margin-bottom: 4px; }
-.dc-ready { display: inline-block; font-size: 11px; font-weight: 600; color: #22C55E; background: #F0FDF4; padding: 2px 8px; border-radius: 10px; margin-bottom: 10px; }
-.dc-names { font-size: 18px; font-weight: 700; color: #1A1A2E; margin-bottom: 4px; letter-spacing: -0.02em; }
+.dc-ready { display: inline-block; font-size: 11px; font-weight: 600; color: #22C55E; background: #F0FDF4; padding: 2px 8px; border-radius: 10px; margin-bottom: 10px; position: absolute; top: 24px; right: 20px; }
+.dc-names { font-size: 18px; font-weight: 700; color: #1A1A2E; margin-bottom: 4px; letter-spacing: -0.02em; margin-top: 8px; }
 .dc-share { font-size: 13px; color: #6B7280; margin-bottom: 12px; }
 .dc-divider { height: 1px; background: #E5E7EB; margin-bottom: 12px; }
 .dc-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 13px; color: #6B7280; }
 .dc-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .dc-dot.green { background: #22C55E; }
 .dc-dot.blue { background: #007AFF; }
-.dc-revoke { font-size: 13px; color: #007AFF; text-decoration: underline; margin-top: 8px; display: inline-block; }
+.dc-revoke { font-size: 13px; color: #007AFF; text-decoration: underline; margin-top: 4px; display: inline-block; float: right; }
 @media (min-width: 768px) {
-  .doora-card-inner { display: flex; align-items: center; gap: 48px; }
-  .doora-card-text { flex: 1; }
+  .doora-card-inner { flex-direction: row; align-items: center; gap: 48px; }
+  .doora-card-text { flex: 1; order: 1; text-align: left; }
   .doora-card-text h2 { font-size: 34px; }
-  .doora-card-text .btn-get { max-width: 240px; }
-  .doora-mockup { flex: 1; margin-top: 0; justify-content: flex-end; }
+  .doora-card-text .btn-get { display: inline-block; max-width: 240px; }
+  .doora-mockup { flex: 1; order: 2; margin-bottom: 0; justify-content: flex-end; }
 }
 
-/* ========== CAROUSEL ========== */
-.carousel-section { background: #F8F6FB; padding: 48px 20px; }
-.carousel-inner { max-width: 520px; margin: 0 auto; position: relative; }
-.carousel-viewport { overflow: hidden; border-radius: 8px; }
-.carousel-track { display: flex; transition: transform 0.4s ease; }
-.carousel-slide { min-width: 100%; padding: 0 4px; box-sizing: border-box; }
-.carousel-card {
-  background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  padding: 32px; position: relative; overflow: hidden; min-height: 240px;
-  display: flex; flex-direction: column;
+/* ========== ACCORDION (Things Nobody Tells Renters) ========== */
+.accordion-section { background: #F8F6FB; padding: 48px 20px; }
+.accordion-inner { max-width: 640px; margin: 0 auto; }
+.accordion-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9CA3AF; font-weight: 600; margin-bottom: 20px; }
+.accordion-item {
+  background: #fff; border-bottom: 1px solid #F3F4F6;
+  display: flex; align-items: flex-start; gap: 16px; padding: 20px 16px;
+  cursor: pointer; position: relative;
 }
-.carousel-card .c-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #6B7280; font-weight: 600; margin-bottom: 8px; }
-.carousel-card .c-watermark { position: absolute; top: 16px; right: 24px; font-size: 48px; font-weight: 700; color: #E5E7EB; line-height: 1; }
-.carousel-card .c-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
-.carousel-card .c-headline { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 10px; color: #1A1A2E; position: relative; }
-.carousel-card .c-divider { height: 1px; background: #E5E7EB; margin-bottom: 10px; }
-.carousel-card .c-body { font-size: 14px; color: #6B7280; line-height: 1.5; margin-bottom: 12px; flex: 1; }
-.carousel-card .c-tag { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: #6B7280; background: #F3F4F6; padding: 4px 10px; border-radius: 12px; }
-.carousel-card .c-tag svg { width: 12px; height: 12px; }
-
-.carousel-arrows { display: none; }
-@media (min-width: 768px) {
-  .carousel-arrows { display: flex; position: absolute; top: 50%; left: -56px; right: -56px; justify-content: space-between; transform: translateY(-50%); pointer-events: none; z-index: 2; }
-  .carousel-inner { max-width: 520px; }
-  .carousel-section { padding: 48px 80px; }
-}
-.carousel-arrow {
-  width: 40px; height: 40px; border-radius: 50%; background: #F3F4F6; border: 1px solid #E5E7EB;
-  display: flex; align-items: center; justify-content: center; pointer-events: auto; cursor: pointer;
-}
-.carousel-arrow svg { width: 16px; height: 16px; color: #6B7280; }
-.carousel-dots { display: flex; justify-content: center; gap: 6px; margin-top: 20px; }
-.carousel-dot { width: 8px; height: 8px; border-radius: 4px; background: #D1D5DB; transition: all 0.3s; cursor: pointer; }
-.carousel-dot.active { width: 16px; background: linear-gradient(135deg, #F0A9D8, #BB9AE4, #53BCFF); }
-.carousel-helper { text-align: center; margin-top: 16px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #9CA3AF; font-weight: 600; }
+.accordion-item:first-of-type { border-radius: 8px 8px 0 0; }
+.accordion-item:last-of-type { border-radius: 0 0 8px 8px; border-bottom: none; }
+.accordion-item:only-of-type { border-radius: 8px; }
+.accordion-num { font-size: 16px; font-weight: 700; color: #D1D5DB; flex-shrink: 0; width: 28px; }
+.accordion-accent { width: 4px; position: absolute; left: 0; top: 0; bottom: 0; border-radius: 2px 0 0 2px; }
+.accordion-title { font-size: 16px; font-weight: 700; color: #1A1A2E; letter-spacing: -0.02em; line-height: 1.3; flex: 1; }
+.accordion-chevron { flex-shrink: 0; width: 20px; height: 20px; color: #D1D5DB; transition: transform 0.3s; margin-top: 2px; }
+.accordion-item.open .accordion-chevron { transform: rotate(180deg); }
+.accordion-body { display: none; padding: 0 16px 16px 60px; font-size: 14px; color: #6B7280; line-height: 1.5; }
+.accordion-item.open + .accordion-body { display: block; background: #fff; }
+.accordion-body .acc-tag { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: #6B7280; background: #F3F4F6; padding: 4px 10px; border-radius: 12px; margin-top: 8px; }
+.accordion-body .acc-tag svg { width: 12px; height: 12px; }
+.accordion-helper { text-align: center; margin-top: 24px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #9CA3AF; font-weight: 600; }
 
 /* ========== TRUST BAND ========== */
 .trust-band {
@@ -229,8 +221,8 @@ button { font-family: inherit; cursor: pointer; border: none; }
   padding: 48px 20px;
 }
 .trust-band-inner { max-width: 960px; margin: 0 auto; }
-.trust-band-heading h2 { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.9); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 8px; }
-.trust-band-heading p { font-size: 16px; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
+.trust-band-heading h2 { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.9); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 20px; text-align: center; }
+/* Mobile: card is centered, subtitle inside card area */
 .data-card {
   max-width: 360px; margin: 0 auto;
   border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 28px 24px;
@@ -245,30 +237,34 @@ button { font-family: inherit; cursor: pointer; border: none; }
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.trust-band-sub { font-size: 14px; color: rgba(255,255,255,0.4); text-align: center; margin-top: 16px; }
 @media (min-width: 768px) {
   .trust-band { padding: 64px 40px; }
   .trust-band-inner { display: flex; align-items: center; gap: 48px; }
   .trust-band-heading { flex: 1; }
-  .trust-band-heading p { margin-bottom: 0; }
+  .trust-band-heading h2 { text-align: left; }
+  .trust-band-heading .trust-band-sub-desktop { display: block; font-size: 16px; color: rgba(255,255,255,0.4); margin-top: 8px; }
   .data-card { max-width: 400px; flex-shrink: 0; margin: 0; }
+  .trust-band-sub { display: none; }
 }
+.trust-band-sub-desktop { display: none; }
 
 /* ========== CTA ========== */
 .cta-section { background: #F8F9FB; padding: 56px 20px 40px; text-align: center; }
 .cta-inner { max-width: 640px; margin: 0 auto; }
-.cta-inner h2 { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 8px; }
+.cta-inner h2 { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 12px; }
 .cta-inner .cta-sub { font-size: 16px; color: #6B7280; font-weight: 500; margin-bottom: 4px; }
 .cta-inner .cta-free { font-size: 13px; color: #9CA3AF; margin-bottom: 24px; }
-.cta-buttons { display: flex; flex-direction: column; gap: 12px; max-width: 340px; margin: 0 auto 32px; }
-.cta-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 6px; font-size: 15px; font-weight: 600; color: #fff; }
+.cta-buttons { display: flex; flex-direction: column; gap: 12px; margin: 0 auto 32px; }
+.cta-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 24px; border-radius: 6px; font-size: 15px; font-weight: 600; color: #fff; }
 .cta-btn svg { width: 18px; height: 18px; }
-.cta-divider { width: 120px; height: 1px; background: #E5E7EB; margin: 0 auto 20px; }
-.cta-footer { font-size: 12px; color: #9CA3AF; }
+.cta-footer { font-size: 12px; color: #9CA3AF; margin-top: 24px; }
 .cta-footer a { color: #9CA3AF; }
 .cta-footer a:hover { text-decoration: underline; }
 @media (min-width: 768px) {
   .cta-inner h2 { font-size: 42px; }
-  .cta-buttons { flex-direction: row; max-width: 100%; justify-content: center; }
+  .cta-buttons { flex-direction: row; justify-content: center; }
+  .cta-btn { padding: 14px 32px; }
 }
 </style>
 </head>
@@ -323,7 +319,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
             <span></span><span></span><span></span>
           </div>
           <div class="chat-input-bar">
-            <span>Type a message…</span>
+            <span>Message...</span>
             <div class="chat-send">
               <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             </div>
@@ -389,89 +385,67 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <!-- Transition -->
 <div class="zone-fade-warm-lavender"></div>
 
-<!-- CAROUSEL -->
-<section class="carousel-section" id="carouselSection">
-  <div class="carousel-inner">
-    <div class="carousel-arrows">
-      <button class="carousel-arrow" id="carouselPrev" aria-label="Previous">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="carousel-arrow" id="carouselNext" aria-label="Next">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
+<!-- ACCORDION — Things Nobody Tells Renters -->
+<section class="accordion-section">
+  <div class="accordion-inner">
+    <div class="accordion-label">Things nobody tells renters</div>
+
+    <div class="accordion-item" data-index="0">
+      <div class="accordion-accent" style="background:linear-gradient(to bottom,#F0A9D8,#BB9AE4,#53BCFF)"></div>
+      <span class="accordion-num">01</span>
+      <span class="accordion-title">The advertised rent isn't fixed.</span>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
-    <div class="carousel-viewport">
-      <div class="carousel-track" id="carouselTrack">
-        <!-- Slide 1 -->
-        <div class="carousel-slide">
-          <div class="carousel-card">
-            <div class="c-accent" style="background:linear-gradient(to bottom,#F0A9D8,#BB9AE4,#53BCFF)"></div>
-            <div class="c-label">Things nobody tells renters.</div>
-            <div class="c-watermark">01</div>
-            <div class="c-headline">The advertised rent isn't fixed.</div>
-            <div class="c-divider"></div>
-            <div class="c-body">You can negotiate — at application, at renewal, and mid-tenancy.</div>
-            <div class="c-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Applies in NSW, VIC, QLD</div>
-          </div>
-        </div>
-        <!-- Slide 2 -->
-        <div class="carousel-slide">
-          <div class="carousel-card">
-            <div class="c-accent" style="background:#F0A9D8"></div>
-            <div class="c-label">Things nobody tells renters.</div>
-            <div class="c-watermark">02</div>
-            <div class="c-headline">Your application gets 30&nbsp;seconds.</div>
-            <div class="c-divider"></div>
-            <div class="c-body">PMs don't read every word. They filter. Completeness is everything.</div>
-            <div class="c-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Based on 2,400+ PM interviews</div>
-          </div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="carousel-slide">
-          <div class="carousel-card">
-            <div class="c-accent" style="background:#BB9AE4"></div>
-            <div class="c-label">Things nobody tells renters.</div>
-            <div class="c-watermark">03</div>
-            <div class="c-headline">The condition report matters more than your lease.</div>
-            <div class="c-divider"></div>
-            <div class="c-body">It decides every bond dispute. Most renters don't know it exists.</div>
-            <div class="c-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Bond disputes · #1 renter issue</div>
-          </div>
-        </div>
-        <!-- Slide 4 -->
-        <div class="carousel-slide">
-          <div class="carousel-card">
-            <div class="c-accent" style="background:#53BCFF"></div>
-            <div class="c-label">Things nobody tells renters.</div>
-            <div class="c-watermark">04</div>
-            <div class="c-headline">You can break a lease without penalty.</div>
-            <div class="c-divider"></div>
-            <div class="c-body">Hardship provisions exist in every state. Most renters don't know.</div>
-            <div class="c-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Residential Tenancies Act</div>
-          </div>
-        </div>
-        <!-- Slide 5 -->
-        <div class="carousel-slide">
-          <div class="carousel-card">
-            <div class="c-accent" style="background:#007AFF"></div>
-            <div class="c-label">Things nobody tells renters.</div>
-            <div class="c-watermark">05</div>
-            <div class="c-headline">Your rental data is worth more than you think.</div>
-            <div class="c-divider"></div>
-            <div class="c-body">Platforms sell renter analytics. Doora gives you control instead.</div>
-            <div class="c-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Data sovereignty · your right</div>
-          </div>
-        </div>
-      </div>
+    <div class="accordion-body" data-index="0">
+      <p>You can negotiate — at application, at renewal, and mid-tenancy.</p>
+      <div class="acc-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Applies in NSW, VIC, QLD</div>
     </div>
-    <div class="carousel-dots" id="carouselDots">
-      <div class="carousel-dot active" data-index="0"></div>
-      <div class="carousel-dot" data-index="1"></div>
-      <div class="carousel-dot" data-index="2"></div>
-      <div class="carousel-dot" data-index="3"></div>
-      <div class="carousel-dot" data-index="4"></div>
+
+    <div class="accordion-item" data-index="1">
+      <div class="accordion-accent" style="background:#F0A9D8"></div>
+      <span class="accordion-num">02</span>
+      <span class="accordion-title">Your application gets 30 seconds.</span>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
-    <div class="carousel-helper">Your helper walks you through all of it.</div>
+    <div class="accordion-body" data-index="1">
+      <p>PMs don't read every word. They filter. Completeness is everything.</p>
+      <div class="acc-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Based on 2,400+ PM interviews</div>
+    </div>
+
+    <div class="accordion-item" data-index="2">
+      <div class="accordion-accent" style="background:#BB9AE4"></div>
+      <span class="accordion-num">03</span>
+      <span class="accordion-title">The condition report matters more than your lease.</span>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="accordion-body" data-index="2">
+      <p>It decides every bond dispute. Most renters don't know it exists.</p>
+      <div class="acc-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Bond disputes · #1 renter issue</div>
+    </div>
+
+    <div class="accordion-item" data-index="3">
+      <div class="accordion-accent" style="background:#53BCFF"></div>
+      <span class="accordion-num">04</span>
+      <span class="accordion-title">You can break a lease without penalty.</span>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="accordion-body" data-index="3">
+      <p>Hardship provisions exist in every state. Most renters don't know.</p>
+      <div class="acc-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Residential Tenancies Act</div>
+    </div>
+
+    <div class="accordion-item" data-index="4">
+      <div class="accordion-accent" style="background:#007AFF"></div>
+      <span class="accordion-num">05</span>
+      <span class="accordion-title">Your rental data is worth more than you think.</span>
+      <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="accordion-body" data-index="4">
+      <p>Platforms sell renter analytics. Doora gives you control instead.</p>
+      <div class="acc-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Data sovereignty · your right</div>
+    </div>
+
+    <div class="accordion-helper">Your helper walks you through all of it.</div>
   </div>
 </section>
 
@@ -483,7 +457,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   <div class="trust-band-inner">
     <div class="trust-band-heading">
       <h2>Your data, your rules.</h2>
-      <p>You'd be surprised what other platforms keep.</p>
+      <p class="trust-band-sub-desktop">You'd be surprised what other platforms keep.</p>
     </div>
     <div class="data-card">
       <div class="data-card-header">YOUR DATA FILE</div>
@@ -491,6 +465,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
       <div class="data-row"><span class="data-key">Your information</span><span class="data-val">Never sold. Never shared.</span></div>
       <div class="data-row"><span class="data-key">When you're done</span><span class="data-val gradient-text">Everything is deleted</span></div>
     </div>
+    <p class="trust-band-sub">You'd be surprised what other platforms keep.</p>
   </div>
 </section>
 
@@ -500,7 +475,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner">
-    <h2>Get started — it's free.</h2>
+    <h2>You don't have to figure this out alone.</h2>
     <p class="cta-sub">The step before the search.</p>
     <p class="cta-free">Free for renters. Always.</p>
     <div class="cta-buttons">
@@ -513,7 +488,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
         Create Doora Card
       </a>
     </div>
-    <div class="cta-divider"></div>
     <div class="cta-footer">
       <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a>
     </div>
@@ -523,7 +497,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 <script>
 /* ===== Chat Rotation ===== */
 (function() {
-  const messages = [
+  var messages = [
     "I keep getting rejected and I don't know what I'm doing wrong.",
     "We're moving from Melbourne — is Sydney really this hard?",
     "I'm on Centrelink. Do agents even look at my application?",
@@ -533,9 +507,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
     "Our rent just went up 30%. We have to move but where?",
     "I've applied for 9 places this month. Not one callback."
   ];
-  let idx = 0;
-  const bubble = document.getElementById('userBubble');
-  const dots = document.getElementById('typingDots');
+  var idx = 0;
+  var bubble = document.getElementById('userBubble');
+  var dots = document.getElementById('typingDots');
 
   setInterval(function() {
     idx = (idx + 1) % messages.length;
@@ -557,48 +531,29 @@ button { font-family: inherit; cursor: pointer; border: none; }
 /* ===== Nav scroll ===== */
 (function() {
   var nav = document.getElementById('nav');
-  var hero = document.querySelector('.hero');
   window.addEventListener('scroll', function() {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   });
 })();
 
-/* ===== Carousel ===== */
+/* ===== Accordion ===== */
 (function() {
-  var track = document.getElementById('carouselTrack');
-  var dots = document.querySelectorAll('.carousel-dot');
-  var prev = document.getElementById('carouselPrev');
-  var next = document.getElementById('carouselNext');
-  var section = document.getElementById('carouselSection');
-  var current = 0, total = 5, interval;
-  var paused = false;
-
-  function goTo(i) {
-    current = ((i % total) + total) % total;
-    track.style.transform = 'translateX(-' + (current * 100) + '%)';
-    dots.forEach(function(d, idx) { d.classList.toggle('active', idx === current); });
-  }
-
-  function autoAdvance() {
-    interval = setInterval(function() { if (!paused) goTo(current + 1); }, 6000);
-  }
-
-  dots.forEach(function(d) { d.addEventListener('click', function() { goTo(+d.dataset.index); }); });
-  prev.addEventListener('click', function() { goTo(current - 1); });
-  next.addEventListener('click', function() { goTo(current + 1); });
-  section.addEventListener('mouseenter', function() { paused = true; });
-  section.addEventListener('mouseleave', function() { paused = false; });
-
-  /* Swipe */
-  var startX = 0, diffX = 0;
-  track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchmove', function(e) { diffX = e.touches[0].clientX - startX; }, { passive: true });
-  track.addEventListener('touchend', function() {
-    if (Math.abs(diffX) > 40) { goTo(current + (diffX > 0 ? -1 : 1)); }
-    diffX = 0;
+  var items = document.querySelectorAll('.accordion-item');
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var idx = item.dataset.index;
+      var body = document.querySelector('.accordion-body[data-index="' + idx + '"]');
+      var isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.accordion-item').forEach(function(i) { i.classList.remove('open'); });
+      document.querySelectorAll('.accordion-body').forEach(function(b) { b.style.display = 'none'; });
+      // Toggle current
+      if (!isOpen) {
+        item.classList.add('open');
+        body.style.display = 'block';
+      }
+    });
   });
-
-  autoAdvance();
 })();
 </script>
 </body>
